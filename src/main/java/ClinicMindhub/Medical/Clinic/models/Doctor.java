@@ -1,8 +1,9 @@
 package ClinicMindhub.Medical.Clinic.models;
 
+
+
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,9 @@ public class Doctor {
     @Enumerated(EnumType.STRING)
     private MedicalSpeciality speciality;
 
+    @OneToMany(mappedBy = "doctor")
     private List<Appointment> appointments = new ArrayList<>();
+
 
     private List <LocalDateTime> schedule = new ArrayList<>();
 
@@ -85,6 +88,11 @@ public class Doctor {
 
     public void setSchedule(List<LocalDateTime> schedule) {
         this.schedule = schedule;
+    }
+
+    public void addAppointment(Appointment appointment) {
+        appointment.setDoctor(this);
+        this.appointments.add(appointment);
     }
 
 }

@@ -1,9 +1,6 @@
 package ClinicMindhub.Medical.Clinic.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -20,6 +17,7 @@ public class Patient {
 
     private LocalDate birthDate;
 
+    @OneToMany (mappedBy = "patient")
     private List<Appointment> appointments = new ArrayList<>();
 
 
@@ -96,6 +94,14 @@ public class Patient {
     public void setAppointments(List<Appointment> appointments) {
         this.appointments = appointments;
     }
+
+
+    public void addAppointment(Appointment appointment) {
+        appointment.setPatient(this);
+        this.appointments.add(appointment);
+    }
+
+
 
     @Override
     public String toString() {

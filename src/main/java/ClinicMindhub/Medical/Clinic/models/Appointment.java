@@ -1,14 +1,9 @@
 package ClinicMindhub.Medical.Clinic.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Appointment {
@@ -21,9 +16,13 @@ public class Appointment {
 
     private LocalDateTime time;
 
-    List<Patient> patients = new ArrayList<>();
+    @ManyToOne (fetch = FetchType.EAGER)
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
 
-    List <Doctor> doctors = new ArrayList<>();
+    @ManyToOne (fetch = FetchType.EAGER)
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
 
     public Appointment() {
 
@@ -55,21 +54,22 @@ public class Appointment {
         this.time = time;
     }
 
-    public List<Patient> getPatients() {
-        return patients;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setPatients(List<Patient> patients) {
-        this.patients = patients;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
-    public List<Doctor> getDoctors() {
-        return doctors;
+    public Doctor getDoctor() {
+        return doctor;
     }
 
-    public void setDoctors(List<Doctor> doctors) {
-        this.doctors = doctors;
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
+
 
 
 }
