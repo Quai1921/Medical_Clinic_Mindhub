@@ -40,11 +40,11 @@ public class MedicalClinicApplication {
 			Patient prueba5 = new Patient("Robert", "Paterson", "robertpaterson@gmail.com", passwordEncoder.encode("cristian1234"), Genre.MALE, LocalDate.of(1990, 1, 1));
 
 
-			Doctor doctor = new Doctor("Juan", "Rodríguez", Genre.MALE, MedicalSpeciality.CARDIOLOGIST, List.of("MONDAY", "WEDNESDAY", "FRIDAY"), List.of(8, 9, 10, 16, 17, 18, 19), "juan@doctor.com", passwordEncoder.encode("Juan123"));
+			Doctor doctor = new Doctor("Juan", "Rodríguez", Genre.MALE, MedicalSpeciality.CARDIOLOGIST, List.of("MONDAY", "WEDNESDAY", "FRIDAY"), List.of(8, 9, 10, 16, 18, 19), "juan@doctor.com", passwordEncoder.encode("Juan123"));
 			Doctor doctor1 = new Doctor("Peter", "Lee", Genre.MALE, MedicalSpeciality.NEUROLOGIST, List.of("MONDAY", "WEDNESDAY", "FRIDAY"), List.of(8, 9, 10, 11), "peter@doctor.com", passwordEncoder.encode("Peter123"));
 			Doctor doctor2 = new Doctor("Hanaa", "Moore", Genre.FEMALE, MedicalSpeciality.GYNECOLOGIST, List.of("TUESDAY", "THURSDAY", "SATURDAY"), List.of(13, 15, 16, 17, 18), "ana@doctor.com", passwordEncoder.encode("Ana123"));
 			Doctor doctor3 = new Doctor("Grace", "Smith", Genre.MALE, MedicalSpeciality.PEDIATRICIAN, List.of("MONDAY", "THURSDAY"), List.of(10, 11, 12, 15, 19), "grace@doctor.com", passwordEncoder.encode("Carlos123"));
-			Doctor doctor4 = new Doctor("Wayne", "Rooney", Genre.MALE, MedicalSpeciality.TRAUMATOLOGIST, List.of("MONDAY", "TUESDAY", "THURSDAY", "WEDNESDAY", "FRIDAY"), List.of(9, 10, 11, 12, 15, 16),"wayne@doctor.com",passwordEncoder.encode("Alex123"));
+			Doctor doctor4 = new Doctor("Wayne", "Rooney", Genre.MALE, MedicalSpeciality.TRAUMATOLOGIST, List.of("MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"), List.of(9, 10, 11, 12, 15, 16),"wayne@doctor.com",passwordEncoder.encode("Alex123"));
 			Doctor doctor5 = new Doctor("Alex", "Morgan", Genre.FEMALE, MedicalSpeciality.PULMONOLOGIST, List.of("THURSDAY", "WEDNESDAY", "FRIDAY"), List.of(14, 15, 16, 17, 18),"alex@doctor.com",passwordEncoder.encode("Alex123"));
 			Doctor doctor6 = new Doctor("Cole", "Palmer", Genre.MALE, MedicalSpeciality.GASTROENTEROLOGIST, List.of("THURSDAY", "FRIDAY"), List.of(8,9,10,11,12,13),"cole@doctor.com",passwordEncoder.encode("Cole123"));
 
